@@ -1,0 +1,10 @@
+# Mandatory Order - pengamanan dasar (Apache)
+Options -Indexes
+
+# folder internal tidak boleh dibuka lewat browser
+RedirectMatch 403 (^|/)(config|models|includes|db)/
+
+# file dokumentasi/skema tidak untuk umum
+<FilesMatch "\.(sql|md)$">
+    Require all denied
+</FilesMatch>
